@@ -29,6 +29,7 @@ $("#2Row").attr("data-time", moment("2:00 pm", "h:mm a").format("HH"));
 $("#3Row").attr("data-time", moment("3:00 pm", "h:mm a").format("HH"));
 $("#4Row").attr("data-time", moment("4:00 pm", "h:mm a").format("HH"));
 $("#5Row").attr("data-time", moment("5:00 pm", "h:mm a").format("HH"));
+$("#6Row").attr("data-time", moment("6:00 pm", "h:mm a").format("HH"));
 
   // Change color in each row by adding in an attribute (above) for each input line to reflect the current hour 
   for (var i = 0; i <= 12; i++) {  
