@@ -30,7 +30,29 @@ $("#3Row").attr("data-time", moment("3:00 pm", "h:mm a").format("HH"));
 $("#4Row").attr("data-time", moment("4:00 pm", "h:mm a").format("HH"));
 $("#5Row").attr("data-time", moment("5:00 pm", "h:mm a").format("HH"));
 
+  // Change color in each row by adding in an attribute (above) for each input line to reflect the current hour 
+  for (var i = 0; i <= 12; i++) {  
 
+      var inputHr = $("#" + i + "Row").attr("data-time"); // Variable for the hour of the row 
+      var inputHourInt = parseInt(inputHr); // Parse it so that hour returns as an integer
+
+
+
+      // Turns grey color if hour is in the past
+      if (currentHourInt > inputHourInt) { 
+          $("#" + i + "Row").addClass("past");
+      }
+
+    // Turns red color if within the present hour 
+       if (currentHourInt === inputHourInt) {
+        $("#" + i + "Row").addClass("present"); 
+        }
+
+      // Turns green color if hour is in the future
+      if (currentHourInt < inputHourInt) {  
+          $("#" + i + "Row").addClass("future");
+      }
+    }
   // Function that triggers data to be store in local storage when save button clicked 
   saveBtn.on("click", function () { // On-click 
 
